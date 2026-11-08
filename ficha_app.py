@@ -23,13 +23,39 @@ COLOR_ICONO: Final[int] = 0xFFC62828         # ARGB
 # Datos del programa. Solo hay que cambiar AUTORES.
 # ---------------------------------------------------------------------------
 VERSION_PROGRAMA: Final[str] = "1.0.0"
-AUTORES: Final[str] = "[usuario] · [usuario]"
+AUTORES: Final[str] = "Alejandro Nuñez · Sebastian"
 PENDIENTE: Final[str] = "  (opción pendiente de implementar)"
 
 # ---------------------------------------------------------------------------
 # Constantes de la pareja. Todo valor fijo del programa va aquí, con nombre.
 # ---------------------------------------------------------------------------
 ANCHO: Final[int] = 44
+CARACTER_DOBLE: Final[str] = "="
+CARACTER_SIMPLE: Final[str] = "-"
+COMISION_TIENDA: Final[float] = 0.15         # 15 % de cada venta
+BYTES_MB: Final[int] = 10 ** 6               # 1 MB de la tienda, en bytes
+BYTES_MIB: Final[int] = 2 ** 20
+PORCENTAJE: Final[int] = 100                 # para expresar en %
+UN_DECIMAL: Final[Decimal] = Decimal("0.1")  # cuantificador para 1 decimal
+DOS_DECIMALES: Final[Decimal] = Decimal("0.01")  # 2 decimales
+DIGITOS_BINARIO: Final[int] = 7              # un permiso por cifra binaria
+DESPLAZAMIENTO_MENOR: Final[int] = 8         # bits que ocupa el parche
+DESPLAZAMIENTO_MAYOR: Final[int] = 16        # bits que ocupan parche y menor
+MASCARA_BYTE: Final[int] = 0xFF              # los ocho bits de abajo
+DESPLAZAMIENTO_ROJO: Final[int] = 16
+DESPLAZAMIENTO_VERDE: Final[int] = 8
+DESPLAZAMIENTO_ALFA: Final[int] = 24
+DIGITOS_BINARIO_CANAL: Final[int] = 8        # un canal de color ocupa 8 bits
+DIGITOS_HEX_CODIGO: Final[int] = 6           # cifras hex de un versionCode
+DIGITOS_HEX_CANAL: Final[int] = 2            # cifras hex de un canal
+
+PERMISO_INTERNET: Final[int] = 0b0000001
+PERMISO_NOTIFICACIONES: Final[int] = 0b0000010
+PERMISO_CAMARA: Final[int] = 0b0000100
+PERMISO_UBICACION: Final[int] = 0b0001000
+PERMISO_CONTACTOS: Final[int] = 0b0010000
+PERMISO_MICROFONO: Final[int] = 0b0100000
+PERMISO_ALMACENAMIENTO: Final[int] = 0b1000000
 
 
 # ---------------------------------------------------------------------------
