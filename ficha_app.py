@@ -63,17 +63,39 @@ PERMISO_ALMACENAMIENTO: Final[int] = 0b1000000
 # ---------------------------------------------------------------------------
 
 
+def linea_separadora(caracter: str) -> str:
+    """Devuelve una línea formada por el carácter repetido ANCHO veces."""
+    return caracter * ANCHO
+
+
+def cabecera_centrada(texto: str) -> str:
+    """Devuelve el texto centrado en un ancho de ANCHO caracteres."""
+    return texto.center(ANCHO)
+
+
 # ---------------------------------------------------------------------------
 # Las diez opciones. Sustituid el docstring y el print(PENDIENTE).
 # ---------------------------------------------------------------------------
+
+
 def opcion_1_identificacion() -> None:
-    """[Docstring: qué hace esta opción.]"""
-    print(PENDIENTE)
+    """Muestra código, nombre, paquete y versión de la app."""
+    version_texto: str = f"{VERSION_MAYOR}.{VERSION_MENOR}.{VERSION_PARCHE}"
+    print(f"Código: {CODIGO}")
+    print(f"Nombre: {NOMBRE}")
+    print(f"Paquete: {PAQUETE}")
+    print(f"Versión: {version_texto}")
 
 
 def opcion_2_tamano() -> None:
-    """[Docstring: qué hace esta opción.]"""
-    print(PENDIENTE)
+    """Muestra el tamaño del APK en bytes, MB, MiB y la diferencia."""
+    tamano_mb: float = TAMANO_APK / BYTES_MB
+    tamano_mib: float = TAMANO_APK / BYTES_MIB
+    diferencia_pct: float = (tamano_mb - tamano_mib) / tamano_mb * PORCENTAJE
+    print(f"Bytes: {TAMANO_APK} B")
+    print(f"En la tienda: {tamano_mb:.2f} MB")
+    print(f"En el móvil: {tamano_mib:.2f} MiB")
+    print(f"Diferencia: {diferencia_pct:.1f} %")
 
 
 def opcion_3_ingresos() -> None:
