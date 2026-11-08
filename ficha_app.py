@@ -97,15 +97,35 @@ def opcion_2_tamano() -> None:
     print(f"En el móvil: {tamano_mib:.2f} MiB")
     print(f"Diferencia: {diferencia_pct:.1f} %")
 
-
 def opcion_3_ingresos() -> None:
-    """[Docstring: qué hace esta opción.]"""
-    print(PENDIENTE)
+    """Muestra descargas, precio, ingresos brutos, comisión y netos."""
+    ingresos_brutos: float = DESCARGAS * PRECIO
+    comision: float = ingresos_brutos * COMISION_TIENDA
+    ingresos_netos: float = ingresos_brutos - comision
+    print(f"Descargas: {DESCARGAS} uds.")
+    print(f"Precio: {PRECIO:.2f} €")
+    print(f"Ingresos brutos: {ingresos_brutos:.2f} €")
+    print(f"Comisión tienda: {comision:.2f} €")
+    print(f"Ingresos netos: {ingresos_netos:.2f} €")
 
 
 def opcion_4_version() -> None:
-    """[Docstring: qué hace esta opción.]"""
-    print(PENDIENTE)
+    """Empaqueta la versión en un versionCode y la desempaqueta."""
+    version_code: int = (
+        (VERSION_MAYOR << DESPLAZAMIENTO_MAYOR)
+        | (VERSION_MENOR << DESPLAZAMIENTO_MENOR)
+        | VERSION_PARCHE
+    )
+    version_hex: str = f"0x{version_code:0{DIGITOS_HEX_CODIGO}X}"
+    mayor: int = (version_code >> DESPLAZAMIENTO_MAYOR) & MASCARA_BYTE
+    menor: int = (version_code >> DESPLAZAMIENTO_MENOR) & MASCARA_BYTE
+    parche: int = version_code & MASCARA_BYTE
+    version_texto: str = f"{VERSION_MAYOR}.{VERSION_MENOR}.{VERSION_PARCHE}"
+    desempaquetado_texto: str = f"{mayor}.{menor}.{parche}"
+    print(f"Versión: {version_texto}")
+    print(f"versionCode: {version_code}")
+    print(f"En hexadecimal: {version_hex}")
+    print(f"Desempaquetado: {desempaquetado_texto}")
 
 
 def opcion_5_permisos() -> None:
