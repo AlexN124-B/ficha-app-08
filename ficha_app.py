@@ -232,7 +232,7 @@ def opcion_10_acerca_de() -> None:
     version_python: str = (
         f"{version_info.major}.{version_info.minor}.{version_info.micro}"
     )
-    print(_doc_)
+    print(__doc__)
     print(f"Versión: {VERSION_PROGRAMA}")
     print(f"Autores: {AUTORES}")
     print(f"Python: {version_python}")
