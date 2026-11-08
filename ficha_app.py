@@ -1,4 +1,4 @@
-"""[Docstring del módulo: una sola línea que diga qué hace el programa.]"""
+"""Ficha técnica de una aplicación móvil antes de publicarla en la tienda."""
 
 from typing import Final
 
@@ -7,17 +7,17 @@ from typing import Final
 # ---------------------------------------------------------------------------
 # Datos de la aplicación. Sustituid los del ejemplo APP-00 por los vuestros.
 # ---------------------------------------------------------------------------
-CODIGO: Final[str] = "APP-00"
-NOMBRE: Final[str] = "Agenda Escolar"
-PAQUETE: Final[str] = "es.ieseuropa.agenda"
-VERSION_MAYOR, VERSION_MENOR, VERSION_PARCHE = 2, 5, 13
-TAMANO_APK: Final[int] = 48_734_208          # bytes
-DESCARGAS: Final[int] = 12_500
-PRECIO: Final[float] = 1.99                  # euros, IVA incluido
-VALORACIONES: Final[int] = 400
-ESTRELLAS: Final[int] = 1_700                # suma de todas las valoraciones
+CODIGO: Final[str] = "APP-08"
+NOMBRE: Final[str] = "Turnos de Farmacia"
+PAQUETE: Final[str] = "es.salud.turnosfarmacia"
+VERSION_MAYOR, VERSION_MENOR, VERSION_PARCHE = 3, 3, 1
+TAMANO_APK: Final[int] = 15_728_640         # bytes
+DESCARGAS: Final[int] = 12_000
+PRECIO: Final[float] = 0.99                  # euros, IVA incluido
+VALORACIONES: Final[int] = 500
+ESTRELLAS: Final[int] = 2_125               # suma de todas las valoraciones
 PERMISOS: Final[int] = 0b0001011
-COLOR_ICONO: Final[int] = 0xFF3A7BD5         # ARGB
+COLOR_ICONO: Final[int] = 0xFFC62828         # ARGB
 
 # ---------------------------------------------------------------------------
 # Datos del programa. Solo hay que cambiar AUTORES.
