@@ -1,5 +1,7 @@
 """Ficha técnica de una aplicación móvil antes de publicarla en la tienda."""
 
+import sys
+from decimal import ROUND_HALF_UP, Decimal
 from typing import Final
 
 # Añadid aquí las importaciones que necesitéis.
