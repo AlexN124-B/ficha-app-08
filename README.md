@@ -1,68 +1,67 @@
-# Ficha de la aplicación APP-08
+# Ficha técnica de una aplicación móvil
 
-<!-- Sustituid todo lo que aparece entre corchetes y borrad estos comentarios. -->
+Programa en Python que muestra la ficha técnica de una aplicación móvil
+antes de publicarla en la tienda: identificación, tamaño del APK, ingresos,
+versionCode, permisos, color del icono, tipos de datos, redondeo de la
+valoración y un resumen de todo.
 
-Programa que muestra, en diez opciones, la ficha técnica de una aplicación móvil antes de
-publicarla: identificación, tamaño del APK, ingresos, versionCode, permisos, color del icono y
-varias comprobaciones sobre tipos y redondeo.
+Aplicación descrita: **APP-08 · Turnos de Farmacia**
+(paquete `es.salud.turnosfarmacia`, versión 3.3.1).
 
-**Módulo:** IC44 — Fundamentos de programación en Python
-**Unidad:** 1 — Estructura de un programa y elementos del lenguaje
-**Pareja:** 08
-**Autores:** AlexN124-B · SebastianStancu
+Autores: [Nombre Apellido] · [Nombre Apellido]
 
-## Aplicación descrita
+## Ejecutar con Docker (sin descargar el código)
 
-| Dato | Valor |
-|---|---|
-| Código | APP08 |
-| Nombre | Turnos de Farmacia |
-| Paquete | es.salud.turnosfarmacia |
-| Versión | 3.3.1 |
-| Tamaño del APK | 15_728_640 |
-| Descargas y precio | 12_000 · 0.99 €  |
-
-## Ejecución desde Docker Hub
-
-No hace falta descargar el repositorio ni tener Python instalado. Solo Docker.
-
-```bash
-docker run --rm [usuario]/ficha-app-xx:1.0.0
+```
+docker run --rm --pull always [usuario]/ficha-app-08:1.0.0
 ```
 
-Página de la imagen: https://hub.docker.com/r/[usuario]/ficha-app-xx
+Imagen publicada en Docker Hub:
+https://hub.docker.com/r/[usuario]/ficha-app-08
 
-## Ejecución en local
+La imagen está construida para `linux/amd64` y `linux/arm64`.
 
-Requiere Python 3.10 o superior.
+## Ejecutar en local
 
-```bash
-python3 -m venv .venv
-source .venv/bin/activate        # en Windows: .venv\Scripts\activate
-python ficha_app.py
+Requisitos: Python 3.14 o superior.
+
 ```
+python3 ficha_app.py
+```
+
+En Windows puede hacer falta usar `py ficha_app.py`.
 
 ## Construir la imagen
 
-```bash
-docker build -t ficha-app-xx .
-docker run --rm ficha-app-xx
-```
-
-## Integración continua
-
-<!-- Solo si habéis hecho la pipeline opcional (Azure Pipelines, GitHub Actions u otra). Si no, borrad este apartado. -->
-
-[Qué agente usa la pipeline, qué comprueba, cuándo se ejecuta y cuándo publica la imagen.]
-
-## Estructura del proyecto
+Requisitos: Docker, con Buildx para construcción multiplataforma.
 
 ```
-.
-├── .dockerignore
-├── .gitignore
-├── Dockerfile
-├── README.md
-├── requirements.txt
-└── ficha_app.py
+docker build -t ficha-app-08 .
+docker run --rm ficha-app-08
 ```
+
+Para publicar una imagen multiarquitectura:
+
+```
+docker buildx build --platform linux/amd64,linux/arm64 \
+  -t [usuario]/ficha-app-08:1.0.0 -t [usuario]/ficha-app-08:latest --push .
+```
+
+## Estructura del repositorio
+
+- `ficha_app.py`: el programa.
+- `Dockerfile`: receta de la imagen.
+- `.dockerignore`: archivos que no entran en la imagen.
+- `.gitignore`: archivos que no se suben al repositorio (`.venv`, `__pycache__`).
+- `requirements.txt`: dependencias (vacío, el programa usa solo la biblioteca estándar).
+
+## Pipeline de CI/CD
+
+[Si hacéis la pipeline, explicad aquí qué hace: la etapa Comprobar se ejecuta
+en cada push a main y compila el programa, comprueba PEP 8 y lo ejecuta; la
+etapa Publicar se ejecuta al subir una etiqueta v* y publica la imagen en
+Docker Hub. Si no la hacéis, borrad este apartado.]
+
+## Versión
+
+Etiqueta de entrega: `v1.0.0`. Imagen: `[usuario]/ficha-app-08:1.0.0`.
