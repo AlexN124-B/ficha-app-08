@@ -167,13 +167,41 @@ def opcion_6_color() -> None:
 
 
 def opcion_7_tipos() -> None:
-    """[Docstring: qué hace esta opción.]"""
-    print(PENDIENTE)
+    """Muestra el tipo de siete datos del programa."""
+    descargas_texto: str = str(DESCARGAS)
+    media: float = ESTRELLAS / VALORACIONES
+    pide_camara: bool = (PERMISOS & PERMISO_CAMARA) != 0
+    codigo_version: int = (
+        (VERSION_MAYOR << DESPLAZAMIENTO_MAYOR)
+        | (VERSION_MENOR << DESPLAZAMIENTO_MENOR)
+        | VERSION_PARCHE
+    )
+    print(f"NOMBRE: {type(NOMBRE)} {NOMBRE}")
+    print(f"DESCARGAS: {type(DESCARGAS)} {DESCARGAS}")
+    print(f"PRECIO: {type(PRECIO)} {PRECIO}")
+    print(f"media: {type(media)} {media}")
+    print(f"pide_camara: {type(pide_camara)} {pide_camara}")
+    print(f"texto_descargas: {type(descargas_texto)} {descargas_texto}")
+    print(f"codigo: {type(codigo_version)} {codigo_version}")
 
 
 def opcion_8_redondeo() -> None:
-    """[Docstring: qué hace esta opción.]"""
-    print(PENDIENTE)
+    """Muestra la media redondeada con round() y con redondeo escolar."""
+    media: float = ESTRELLAS / VALORACIONES
+    media_decimal: Decimal = Decimal(ESTRELLAS) / Decimal(VALORACIONES)
+    media_1_round: float = round(media, 1)
+    media_2_round: float = round(media, 2)
+    media_1_escolar: Decimal = media_decimal.quantize(
+        UN_DECIMAL, rounding=ROUND_HALF_UP
+    )
+    media_2_escolar: Decimal = media_decimal.quantize(
+        DOS_DECIMALES, rounding=ROUND_HALF_UP
+    )
+    print(f"Valor exacto: {media}")
+    print(f"round(), 1 dec.: {media_1_round}")
+    print(f"Escolar, 1 dec.: {media_1_escolar}")
+    print(f"round(), 2 dec.: {media_2_round}")
+    print(f"Escolar, 2 dec.: {media_2_escolar}")
 
 
 def opcion_9_ficha() -> None:
