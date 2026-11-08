@@ -205,13 +205,35 @@ def opcion_8_redondeo() -> None:
 
 
 def opcion_9_ficha() -> None:
-    """[Docstring: qué hace esta opción.]"""
-    print(PENDIENTE)
+    """Muestra la ficha completa reutilizando las opciones 1 a 4."""
+    separador_doble: str = linea_separadora(CARACTER_DOBLE)
+    separador_simple: str = linea_separadora(CARACTER_SIMPLE)
+    print(separador_doble)
+    print(cabecera_centrada("FICHA DE LA APLICACIÓN"))
+    print(separador_doble)
+    opcion_1_identificacion()
+    print(separador_simple)
+    print("TAMAÑO DEL APK")
+    opcion_2_tamano()
+    print(separador_simple)
+    print("INGRESOS")
+    opcion_3_ingresos()
+    print(separador_simple)
+    print("VERSIONCODE")
+    opcion_4_version()
+    print(separador_doble)
 
 
 def opcion_10_acerca_de() -> None:
-    """[Docstring: qué hace esta opción.]"""
-    print(PENDIENTE)
+    """Muestra los datos del programa y la versión de Python."""
+    version_info = sys.version_info
+    version_python: str = (
+        f"{version_info.major}.{version_info.minor}.{version_info.micro}"
+    )
+    print(_doc_)
+    print(f"Versión: {VERSION_PROGRAMA}")
+    print(f"Autores: {AUTORES}")
+    print(f"Python: {version_python}")
 
 
 # ---------------------------------------------------------------------------
