@@ -1,4 +1,4 @@
-# Ficha de la aplicación APP-XX
+# Ficha de la aplicación APP-08
 
 <!-- Sustituid todo lo que aparece entre corchetes y borrad estos comentarios. -->
 
@@ -8,19 +8,19 @@ varias comprobaciones sobre tipos y redondeo.
 
 **Módulo:** IC44 — Fundamentos de programación en Python
 **Unidad:** 1 — Estructura de un programa y elementos del lenguaje
-**Pareja:** [número]
-**Autores:** [usuario] · [usuario]
+**Pareja:** 08
+**Autores:** AlexN124-B · SebastianStancu
 
 ## Aplicación descrita
 
 | Dato | Valor |
 |---|---|
-| Código | [APP-XX] |
-| Nombre | [nombre] |
-| Paquete | [paquete] |
-| Versión | [mayor.menor.parche] |
-| Tamaño del APK | [bytes] |
-| Descargas y precio | [descargas · precio] |
+| Código | APP08 |
+| Nombre | Turnos de Farmacia |
+| Paquete | es.salud.turnosfarmacia |
+| Versión | 3.3.1 |
+| Tamaño del APK | 15_728_640 |
+| Descargas y precio | 12_000 · 0.99 €  |
 
 ## Ejecución desde Docker Hub
 
