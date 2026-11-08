@@ -129,13 +129,41 @@ def opcion_4_version() -> None:
 
 
 def opcion_5_permisos() -> None:
-    """[Docstring: qué hace esta opción.]"""
-    print(PENDIENTE)
+    """Muestra los permisos de la app en binario y uno a uno."""
+    permisos_binario: str = format(PERMISOS, f"0{DIGITOS_BINARIO}b")
+    sin_ubicacion: int = PERMISOS & ~PERMISO_UBICACION
+    sin_ubicacion_binario: str = format(sin_ubicacion, f"0{DIGITOS_BINARIO}b")
+    print(f"En binario: {permisos_binario}")
+    print(f"Internet: {(PERMISOS & PERMISO_INTERNET) != 0}")
+    print(f"Notificaciones: {(PERMISOS & PERMISO_NOTIFICACIONES) != 0}")
+    print(f"Cámara: {(PERMISOS & PERMISO_CAMARA) != 0}")
+    print(f"Ubicación: {(PERMISOS & PERMISO_UBICACION) != 0}")
+    print(f"Contactos: {(PERMISOS & PERMISO_CONTACTOS) != 0}")
+    print(f"Micrófono: {(PERMISOS & PERMISO_MICROFONO) != 0}")
+    print(f"Almacenamiento: {(PERMISOS & PERMISO_ALMACENAMIENTO) != 0}")
+    print(f"Sin ubicación: {sin_ubicacion_binario}")
 
 
 def opcion_6_color() -> None:
-    """[Docstring: qué hace esta opción.]"""
-    print(PENDIENTE)
+    """Muestra el color ARGB del icono en canales y en formato CSS."""
+    alfa: int = (COLOR_ICONO >> DESPLAZAMIENTO_ALFA) & MASCARA_BYTE
+    opacidad_pct: float = alfa / MASCARA_BYTE * PORCENTAJE
+    rojo: int = (COLOR_ICONO >> DESPLAZAMIENTO_ROJO) & MASCARA_BYTE
+    verde: int = (COLOR_ICONO >> DESPLAZAMIENTO_VERDE) & MASCARA_BYTE
+    azul: int = COLOR_ICONO & MASCARA_BYTE
+    hex_rojo: str = f"{rojo:0{DIGITOS_HEX_CANAL}X}"
+    hex_verde: str = f"{verde:0{DIGITOS_HEX_CANAL}X}"
+    hex_azul: str = f"{azul:0{DIGITOS_HEX_CANAL}X}"
+    bin_rojo: str = f"{rojo:0{DIGITOS_BINARIO_CANAL}b}"
+    bin_verde: str = f"{verde:0{DIGITOS_BINARIO_CANAL}b}"
+    bin_azul: str = f"{azul:0{DIGITOS_BINARIO_CANAL}b}"
+    css_color: str = f"#{hex_rojo}{hex_verde}{hex_azul}"
+    print(f"ARGB: 0x{COLOR_ICONO:08X}")
+    print(f"Rojo: {rojo} {bin_rojo} {hex_rojo}")
+    print(f"Verde: {verde} {bin_verde} {hex_verde}")
+    print(f"Azul: {azul} {bin_azul} {hex_azul}")
+    print(f"Opacidad: {opacidad_pct:.1f} %")
+    print(f"Para CSS: {css_color}")
 
 
 def opcion_7_tipos() -> None:
